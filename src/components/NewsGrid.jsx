@@ -1,32 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import NewsArticle from './NewsArticle';
+import Pagination from './Pagination'; // Import the Pagination component
 import './NewsGrid.css';
 
 const NewsGrid = ({ news }) => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const itemsPerPage = 10;
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalArticles = news.length;
+  const totalPages = Math.ceil(totalArticles / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const articlesToShow = news.slice(startIndex, endIndex);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
 
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const [firstArticle, ...restArticles] = news; // Separate the first article from the rest
+  const [firstArticle, ...restArticles] = articlesToShow; // Separate the first article from the rest
 
   return (
-    <>
-      {screenWidth < 768 ? (
+    <div className="news-grid">
+      {window.innerWidth < 768 ? (
         <div className='news-grid'>
-        {news.map((newsItem, index) => (
-          <NewsArticle key={index} article={newsItem} isFirstArticle={false}/>
-        ))}
-      </div>   
+          {articlesToShow.map((newsItem, index) => (
+            <NewsArticle key={index} article={newsItem} isFirstArticle={false}/>
+          ))}
+        </div>   
       ) : (
         <div className='news-grid'>
           <div className="big-article">
@@ -39,7 +38,12 @@ const NewsGrid = ({ news }) => {
           </div>
         </div>
       )}
-    </>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
+    </div>
   );
 };
 
