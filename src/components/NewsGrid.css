@@ -1,0 +1,20 @@
+/* NewsGrid.css */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns in a row */
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  /* For tablet screens, 2 columns */
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  /* For mobile screens, 1 column */
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
