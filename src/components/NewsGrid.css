@@ -1,20 +1,27 @@
-/* NewsGrid.css */
-.news-grid {
+.small-articles{
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns in a row */
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns in a row */
   gap: 20px;
 }
 
+/* For tablet screens, 2 columns */
 @media (max-width: 768px) {
-  /* For tablet screens, 2 columns */
   .news-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 50px;
   }
 }
 
 @media (max-width: 480px) {
   /* For mobile screens, 1 column */
-  .news-grid {
+  .news-grid, .big-article, .small-articles {
     grid-template-columns: 1fr;
   }
+}
+
+/* Additional styles for the first article */
+.big-article {
+  grid-column: 1 / span 3; /* Take the full width of 3 columns */
+  margin-bottom: 40px;
 }
