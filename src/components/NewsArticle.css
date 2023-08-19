@@ -58,4 +58,13 @@
   .article-description {
     color: #555;
   }
+
+  /* .article-description {
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
+
+
   

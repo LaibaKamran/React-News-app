@@ -1,24 +1,24 @@
-/* Add these styles to your existing CSS */
 .pagination {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .pagination button {
-    border: none; /* Remove button borders */
-    background: none;
-    color: #333; /* Button text color */
-    margin: 0 5px; /* Add some spacing between buttons */
-    cursor: pointer;
-  }
-  
-  .pagination .current-page {
-    border: 2px solid #333; /* Highlight current page with a border */
-    background-color: #333;
-    color: #fff; /* Button text color on highlighted current page */
-    padding: 2px 8px;
-    margin: 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  border: none; 
+  background: none;
+  color: #333; 
+  margin: 0 8px;
+  cursor: pointer;
+  font-size: 16px; 
+}
+
+.pagination .current-page {
+  border: 2px solid #333; 
+  background-color: #333;
+  color: #fff; 
+  padding: 4px 12px; 
+  margin: 0 8px; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; 
+}

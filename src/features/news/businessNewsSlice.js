@@ -2,8 +2,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_KEY = '499c68c17a7c4a1ab9ed4e8837a28803';
-const COUNTRIES = ['us', 'gb', 'ca', 'au']; // Add more countries if needed
+const API_KEY = '318ff5d9e1834788a7244d0cd604f867';
 
 const initialState = {
   loading: false,
@@ -12,14 +11,20 @@ const initialState = {
 };
 
 export const fetchBusinessNews = createAsyncThunk('businessNews/fetchBusinessNews', async () => {
-  const responses = await Promise.all(
-    COUNTRIES.map(country =>
-      axios.get(`https://newsapi.org/v2/top-headlines?country=${country}&category=business&apiKey=${API_KEY}`)
-    )
-  );
+  try {
+    const response = await axios.get(
+      `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${API_KEY}`
+    );
 
-  const allBusinessArticles = responses.flatMap(response => response.data.articles);
-  return allBusinessArticles;
+    if (response) {
+      return response.data.articles;
+    } else {
+      return [];
+    }
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 });
 
 const businessNewsSlice = createSlice({
