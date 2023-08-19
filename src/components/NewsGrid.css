@@ -1,3 +1,9 @@
+.small-articles, .news-grid, .big-article {
+  display: grid;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
 .small-articles{
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Default: 3 columns in a row */
