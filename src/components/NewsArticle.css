@@ -3,6 +3,7 @@
     /* padding: 16px; */
     margin: 40px;
     max-width: 350px;
+    max-height: 400px;
   }
 
   .first-article{
@@ -59,12 +60,17 @@
     color: #555;
   }
 
-  /* .article-description {
-  color: #555;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-} */
+ /* Mobile Styles */
+@media (max-width: 480px) {
+
+  .news-article {
+    margin: 30px; /* Add margin on sides and between articles */
+    max-width: calc(100% - 40px); /* Calculate max width with margins on both sides */
+    max-height: none;
+  }
+
+}
+
 
 
   
