@@ -10,6 +10,7 @@ import HomePage from './components/HomePage';
 import TechPage from './components/TechPage';
 import BusinessPage from './components/BusinessPage';
 import SportsPage from './components/SportsPage';
+import SearchComponent from './components/SearchComponent';
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
           <Route path="/tech" element={<TechPage />} />
           <Route path="/business" element={<BusinessPage />} />
           <Route path="/sports" element={<SportsPage />} />
+          <Route path="/search" element={<SearchComponent />} />
        </Routes>
     </div>
   );

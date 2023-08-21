@@ -21,6 +21,9 @@ const Navbar = () => {
         <NavLink to="/sports" className="navbar-category">
           Sports
         </NavLink>
+        <NavLink to="/search" className="navbar-category">
+          Search
+        </NavLink>
       </div>
     </nav>
   );
