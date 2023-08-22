@@ -1,7 +1,7 @@
 .small-articles, .news-grid, .big-article {
   display: grid;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center; 
+  align-items: center; 
 }
 
 .small-articles{
@@ -11,7 +11,7 @@
 }
 
 /* For tablet screens, 2 columns */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .news-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -19,7 +19,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   /* For mobile screens, 1 column */
   .news-grid, .big-article, .small-articles {
     grid-template-columns: 1fr;

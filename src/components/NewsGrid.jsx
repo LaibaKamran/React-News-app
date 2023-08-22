@@ -30,7 +30,7 @@ const NewsGrid = ({ news }) => {
 
   return (
     <>
-      {screenWidth < 768 ? (
+      {screenWidth < 1025 ? (
         <div className='news-grid'>
           {news.map((newsItem, index) => (
             loading ? <SkeletonLoader key={index} /> : <NewsArticle key={index} article={newsItem} isFirstArticle={false}/>
