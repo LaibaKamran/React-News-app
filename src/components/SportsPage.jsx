@@ -14,11 +14,11 @@ function SportsPage() { // Update the component name
 
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(1);
-  const totalSportsArticles = sportsNews.length; // Update the variable name
-  const totalSportsPages = Math.ceil(totalSportsArticles / itemsPerPage); // Update the variable name
+  const totalSportsArticles = sportsNews.length; 
+  const totalSportsPages = Math.ceil(totalSportsArticles / itemsPerPage); 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const sportsArticlesToShow = sportsNews.slice(startIndex, endIndex); // Update the variable name
+  const sportsArticlesToShow = sportsNews.slice(startIndex, endIndex); 
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -36,4 +36,4 @@ function SportsPage() { // Update the component name
   );
 }
 
-export default SportsPage; // Update the export
+export default SportsPage; 

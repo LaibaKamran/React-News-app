@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBusinessNews, selectBusinessNews } from '../features/news/businessNewsSlice'; // Update the import
+import { fetchBusinessNews, selectBusinessNews } from '../features/news/businessNewsSlice'; 
 import NewsGrid from '../components/NewsGrid';
 import Pagination from '../components/Pagination';
 
-function BusinessPage() { // Update the function name
+function BusinessPage() { 
   const dispatch = useDispatch();
-  const businessNews = useSelector(selectBusinessNews); // Update the selector
+  const businessNews = useSelector(selectBusinessNews);
 
   useEffect(() => {
-    dispatch(fetchBusinessNews()); // Update the action
+    dispatch(fetchBusinessNews());
   }, [dispatch]);
 
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(1);
-  const totalBusinessArticles = businessNews.length; // Update the variable name
-  const totalBusinessPages = Math.ceil(totalBusinessArticles / itemsPerPage); // Update the variable name
+  const totalBusinessArticles = businessNews.length; 
+  const totalBusinessPages = Math.ceil(totalBusinessArticles / itemsPerPage); 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const businessArticlesToShow = businessNews.slice(startIndex, endIndex); // Update the variable name
+  const businessArticlesToShow = businessNews.slice(startIndex, endIndex); 
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);

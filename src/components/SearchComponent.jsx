@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchSearchResults } from '../features/news/searchSlice'; // Import the fetchSearchResults action
+import { fetchSearchResults } from '../features/news/searchSlice'; 
 
 import './SearchComponent.css';
 
@@ -13,12 +13,7 @@ const SearchComponent = () => {
 
   const handleSearch = async () => {
     try {
-      console.log("handleSearch called");
-      const resultAction = await dispatch(fetchSearchResults({ query: searchQuery, selectedDateRange, selectedSortBy }));
-      console.log("resultAction:", resultAction);
-      const searchResults = resultAction.payload; // Access the resolved value
-      console.log("searchResults:", searchResults);
-      // ... rest of the code ...
+      await dispatch(fetchSearchResults({ query: searchQuery, selectedDateRange, selectedSortBy }));
     } catch (error) {
       console.error("Error fetching search results:", error);
     }

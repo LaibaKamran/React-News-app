@@ -23,12 +23,17 @@ function SearchPage() {
   return (
     <div>
       <SearchComponent />
-      <NewsGrid news={articlesToShow} />
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+     {/* Conditionally render the NewsGrid only if there are search results */}
+     {searchResults.length > 0 && (
+        <>
+          <NewsGrid news={articlesToShow} />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        </>
+      )}
     </div>
   );
 }

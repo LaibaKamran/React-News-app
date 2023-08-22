@@ -29,5 +29,4 @@
 /* Additional styles for the first article */
 .big-article {
   grid-column: 1 / span 3; /* Take the full width of 3 columns */
-  margin-bottom: 40px;
 }

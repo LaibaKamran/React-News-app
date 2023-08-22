@@ -13,7 +13,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   background-color: white;
-  color: #333; /* Dark content color */
+  color: #333;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -26,19 +26,19 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: #333; /* Darken the logo color */
+  color: #333; 
 }
 
 .navbar-categories {
   display: flex;
   gap: 1rem;
-  margin-right: 1rem; /* Adjusted margin to keep categories on the right */
+  margin-right: 1rem; 
 }
 
 .navbar-category {
   font-size: 1rem;
   text-decoration: none;
-  color: #5c5a5a; /* Darken the category color */
+  color: #5c5a5a; 
   transition: color 0.3s ease-in-out;
 }
 
@@ -47,7 +47,6 @@ body {
   font-weight: bolder;
 }
 
-/* Add a hover effect for the categories */
 .navbar-category:hover {
   color: #080807;
 }
@@ -55,14 +54,9 @@ body {
 /* Add media queries for responsiveness */
 @media (max-width: 768px) {
   .navbar {
-    /* flex-direction: column; */
     justify-content: space-between;
     text-align: center;
   }
-
-  /* .navbar-categories {
-    margin: 1rem 0;
-  } */
 
   .navbar-category {
     font-size: 1.2rem;

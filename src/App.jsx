@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchNews, selectNews } from './features/news/newsSlice';
-import NewsGrid from './components/NewsGrid';
+import React from 'react';
 import Navbar from './components/Navbar';
-import Pagination from './components/Pagination';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import TechPage from './components/TechPage';
 import BusinessPage from './components/BusinessPage';
 import SportsPage from './components/SportsPage';
-import SearchComponent from './components/SearchComponent';
 import SearchPage from './components/SearchPage';
 
 function App() {

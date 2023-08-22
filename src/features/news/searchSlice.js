@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import moment from 'moment';
 
-const API_KEY = '318ff5d9e1834788a7244d0cd604f867';
+const API_KEY = '511532a7abb64bec99b7209267646a73';
 
 const initialState = {
   loading: false,
@@ -10,7 +10,7 @@ const initialState = {
   error: null,
 };
 
-// Create a helper function to calculate the date range based on the selected option
+
 const calculateDateRange = (selectedDateRange) => {
   switch (selectedDateRange) {
     case 'last_week':
@@ -76,3 +76,4 @@ const searchSlice = createSlice({
 
 export default searchSlice.reducer;
 export const selectSearchResults = (state) => state.search.searchResults;
+export const selectLoading = (state) => state.search.loading;
