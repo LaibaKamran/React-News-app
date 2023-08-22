@@ -13,7 +13,7 @@ const initialState = {
 export const fetchTechNews = createAsyncThunk('techNews/fetchTechNews', async () => {
   try {
     const response = await axios.get(
-      `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/everything?q=technology&apiKey=${API_KEY}`
     );
 
     return response.data.articles;

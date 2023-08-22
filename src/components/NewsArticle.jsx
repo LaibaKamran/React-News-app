@@ -3,7 +3,7 @@ import './NewsArticle.css';
 
 const NewsArticle = ({ article, isFirstArticle, isDesktop }) => {
   if (!article || !article.url) {
-    return <p>Error: Invalid article data.</p>;
+    return;
   }
 
   const { url, urlToImage, publishedAt, title, description } = article;
@@ -15,6 +15,10 @@ const NewsArticle = ({ article, isFirstArticle, isDesktop }) => {
   };
 
   const getDescription = () => {
+    if (!description) {
+      return ''; // Return an empty string if description is null or undefined
+    }
+  
     if (isFirstArticle || isDesktop) {
       return description;
     } else {

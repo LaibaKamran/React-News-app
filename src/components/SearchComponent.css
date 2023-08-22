@@ -42,3 +42,42 @@
     background-color: #48494a;
   }
   
+  /* Tablet styles */
+
+@media screen and (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .search-input,
+  .date-range-select,
+  .sort-by-select {
+    margin-right: 0;
+  }
+
+  .search-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-button,
+  .date-range-select,
+  .sort-by-select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile styles */
+
+@media screen and (max-width: 480px) {
+  .search-container {
+    width: 90%;
+  }
+
+  .search-input {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}

@@ -13,7 +13,7 @@ const initialState = {
 export const fetchBusinessNews = createAsyncThunk('businessNews/fetchBusinessNews', async () => {
   try {
     const response = await axios.get(
-      `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/everything?q=business&apiKey=${API_KEY}`
     );
 
     if (response) {

@@ -13,7 +13,7 @@ const initialState = {
 export const fetchSportsNews = createAsyncThunk('sportsNews/fetchSportsNews', async () => {
   try {
     const response = await axios.get(
-      `https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/everything?q=sports&apiKey=${API_KEY}`
     );
 
     if (response) {

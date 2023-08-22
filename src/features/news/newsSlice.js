@@ -10,10 +10,17 @@ const initialState = {
   error: null,
 };
 
+const generateRandomLetter = () => {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const randomIndex = Math.floor(Math.random() * alphabet.length);
+  return alphabet[randomIndex];
+};
+
 export const fetchNews = createAsyncThunk('news/fetchNews', async () => {
   try {
+    const randomLetter = generateRandomLetter();
     const response = await axios.get(
-      `https://newsapi.org/v2/everything?q=a&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/everything?q=${randomLetter}&apiKey=${API_KEY}`
     );
 
     if (response) {
