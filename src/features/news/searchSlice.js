@@ -45,6 +45,7 @@ export const fetchSearchResults = createAsyncThunk(
       }
   
       const queryString = queryParams.join('&');
+      console.log(queryString);
   
       const response = await axios.get(
         `https://newsapi.org/v2/everything?${queryString}&apiKey=${API_KEY}`

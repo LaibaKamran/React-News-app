@@ -13,7 +13,7 @@ const initialState = {
 export const fetchNews = createAsyncThunk('news/fetchNews', async () => {
   try {
     const response = await axios.get(
-      `https://newsapi.org/v2/everything?q=apple&from=2023-08-17&to=2023-08-17&sortBy=popularity&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/everything?q=a&apiKey=${API_KEY}`
     );
 
     if (response) {

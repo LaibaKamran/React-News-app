@@ -12,13 +12,22 @@ const SearchComponent = () => {
   const [selectedSortBy, setSelectedSortBy] = useState('');
 
   const handleSearch = async () => {
-    dispatch(fetchSearchResults({ query: searchQuery, selectedDateRange, selectedSortBy }))
+    try {
+      console.log("handleSearch called");
+      const resultAction = await dispatch(fetchSearchResults({ query: searchQuery, selectedDateRange, selectedSortBy }));
+      console.log("resultAction:", resultAction);
+      const searchResults = resultAction.payload; // Access the resolved value
+      console.log("searchResults:", searchResults);
+      // ... rest of the code ...
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+    }
   };
-
   return (
     <div className="search-container">
       <input
         type="text"
+        id='searchQuery'
         className="search-input"
         placeholder="Enter keywords..."
         value={searchQuery}
@@ -45,7 +54,7 @@ const SearchComponent = () => {
         <option value="popularity">Popularity</option>
         <option value="relevancy">Relevancy</option>
       </select>
-      <button className="search-button" onClick={handleSearch}>Search</button>
+      <button type="submit" className="search-button" onClick={handleSearch}>Search</button>
     </div>
   );
 };
