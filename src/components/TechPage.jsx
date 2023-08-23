@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchTechNews, selectTechNews } from '../features/news/techNewsSlice';
 import NewsGrid from '../components/NewsGrid';
 import Pagination from '../components/Pagination';
-import './TechPage.css'
+// import './TechPage.css'
 
 function TechPage() {
   const dispatch = useDispatch();

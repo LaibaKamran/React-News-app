@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchNews, selectNews } from '../features/news/newsSlice';
 import NewsGrid from '../components/NewsGrid';
 import Pagination from '../components/Pagination';
-import "./HomePage.css"
+// import "./HomePage.css"
 
 function HomePage(){
     const dispatch = useDispatch();

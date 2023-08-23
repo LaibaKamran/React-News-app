@@ -1,5 +1,6 @@
 import React from 'react';
 import './NewsArticle.css';
+import placeholderImage from '../assets/elementor-placeholder-image.webp';
 
 const NewsArticle = ({ article, isFirstArticle, isDesktop }) => {
   if (!article || !article.url) {
@@ -28,15 +29,17 @@ const NewsArticle = ({ article, isFirstArticle, isDesktop }) => {
   };
 
   return (
+    <div className='parent'>
     <div className={` ${isFirstArticle ? 'first-article' : 'news-article'}`} onClick={openArticleInNewTab}>
       <div className={` ${isFirstArticle ? 'first-article-img' : 'img-container'}`}>
-        <img src={urlToImage} alt={title} />
+      {urlToImage ? <img src={urlToImage} alt={title} /> : <img src={placeholderImage} alt="Placeholder" />}
       </div>
       <div className={` ${isFirstArticle ? 'first-article-content' : 'content'}`}>
         <p className="published-date">{new Date(publishedAt).toLocaleDateString()}</p>
         <h3 className="article-title">{title}</h3>
         <p className="article-description">{getDescription()}</p>
       </div>
+    </div>
     </div>
   );
 };

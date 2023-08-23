@@ -4,6 +4,16 @@
   align-items: center; 
 }
 
+.news-grid{
+  /* border: solid 1px black; */
+  width: 90%;
+}
+
+.parent-div{
+  display: flex;
+  justify-content: center;
+}
+
 .small-articles{
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Default: 3 columns in a row */
@@ -11,11 +21,11 @@
 }
 
 /* For tablet screens, 2 columns */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .news-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 50px;
+    gap: 0;
   }
 }
 
@@ -23,6 +33,7 @@
   /* For mobile screens, 1 column */
   .news-grid, .big-article, .small-articles {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 }
 

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchSportsNews, selectSportsNews } from '../features/news/sportsNewsSlice'; // Update the imports
 import NewsGrid from '../components/NewsGrid';
 import Pagination from '../components/Pagination';
-import './SportsPage.css'
+// import './SportsPage.css'
 
 function SportsPage() { // Update the component name
   const dispatch = useDispatch();

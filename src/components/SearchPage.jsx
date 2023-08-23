@@ -4,7 +4,7 @@ import { selectSearchResults } from '../features/news/searchSlice';
 import NewsGrid from '../components/NewsGrid';
 import Pagination from '../components/Pagination';
 import SearchComponent from '../components/SearchComponent';
-import './SearchPage.css'
+// import './SearchPage.css'
 
 function SearchPage() {
   const searchResults = useSelector(selectSearchResults);
