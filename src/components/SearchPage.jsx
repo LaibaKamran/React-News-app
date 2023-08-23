@@ -4,6 +4,7 @@ import { selectSearchResults } from '../features/news/searchSlice';
 import NewsGrid from '../components/NewsGrid';
 import Pagination from '../components/Pagination';
 import SearchComponent from '../components/SearchComponent';
+import './SearchPage.css'
 
 function SearchPage() {
   const searchResults = useSelector(selectSearchResults);
@@ -25,14 +26,18 @@ function SearchPage() {
       <SearchComponent />
      {/* Conditionally render the NewsGrid only if there are search results */}
      {searchResults.length > 0 && (
-        <>
-          <NewsGrid news={articlesToShow} />
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-          />
-        </>
+         <div className="search-page">
+         <div className="news-container">
+           <NewsGrid news={articlesToShow} />
+         </div>
+         <div className="pagination-container">
+           <Pagination
+             currentPage={currentPage}
+             totalPages={totalPages}
+             onPageChange={handlePageChange}
+           />
+         </div>
+       </div>
       )}
     </div>
   );

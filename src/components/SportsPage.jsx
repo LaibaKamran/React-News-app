@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchSportsNews, selectSportsNews } from '../features/news/sportsNewsSlice'; // Update the imports
 import NewsGrid from '../components/NewsGrid';
 import Pagination from '../components/Pagination';
+import './SportsPage.css'
 
 function SportsPage() { // Update the component name
   const dispatch = useDispatch();
@@ -25,13 +26,17 @@ function SportsPage() { // Update the component name
   };
 
   return (
-    <div>
-      <NewsGrid news={sportsArticlesToShow} /> 
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalSportsPages} 
-        onPageChange={handlePageChange}
-      />
+    <div className="sports-page">
+      <div className="news-container">
+        <NewsGrid news={sportsArticlesToShow} />
+      </div>
+      <div className="pagination-container">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalSportsPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
     </div>
   );
 }

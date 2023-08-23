@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchBusinessNews, selectBusinessNews } from '../features/news/businessNewsSlice'; 
 import NewsGrid from '../components/NewsGrid';
 import Pagination from '../components/Pagination';
+import './BusinessPage.css'
 
 function BusinessPage() { 
   const dispatch = useDispatch();
@@ -25,14 +26,18 @@ function BusinessPage() {
   };
 
   return (
-    <div>
-      <NewsGrid news={businessArticlesToShow} /> 
+    <div className="business-page">
+    <div className="news-container">
+      <NewsGrid news={businessArticlesToShow} />
+    </div>
+    <div className="pagination-container">
       <Pagination
         currentPage={currentPage}
         totalPages={totalBusinessPages}
         onPageChange={handlePageChange}
       />
     </div>
+  </div>
   );
 }
 

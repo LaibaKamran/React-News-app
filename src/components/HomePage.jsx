@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchNews, selectNews } from '../features/news/newsSlice';
 import NewsGrid from '../components/NewsGrid';
 import Pagination from '../components/Pagination';
+import "./HomePage.css"
 
 function HomePage(){
     const dispatch = useDispatch();
@@ -25,13 +26,17 @@ function HomePage(){
   };
 
   return (
-    <div>
-      <NewsGrid news={articlesToShow} />
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+    <div className="home-page">
+      <div className="news-container">
+        <NewsGrid news={articlesToShow} />
+      </div>
+      <div className="pagination-container">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
     </div>
   )
 }
