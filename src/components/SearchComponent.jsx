@@ -4,7 +4,7 @@ import { fetchSearchResults } from '../features/news/searchSlice';
 
 import './SearchComponent.css';
 
-const SearchComponent = () => {
+const SearchComponent = ({ onSearch }) => {
   const dispatch = useDispatch();
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,6 +14,7 @@ const SearchComponent = () => {
   const handleSearch = async () => {
     try {
       await dispatch(fetchSearchResults({ query: searchQuery, selectedDateRange, selectedSortBy }));
+      onSearch();
     } catch (error) {
       console.error("Error fetching search results:", error);
     }

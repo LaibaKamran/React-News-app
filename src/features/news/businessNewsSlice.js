@@ -2,7 +2,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_KEY = '511532a7abb64bec99b7209267646a73';
+const API_KEY =  import.meta.env.VITE_REACT_APP_API_KEY;
 
 const initialState = {
   loading: false,

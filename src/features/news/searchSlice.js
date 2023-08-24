@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import moment from 'moment';
 
-const API_KEY = '511532a7abb64bec99b7209267646a73';
+const API_KEY =  import.meta.env.VITE_REACT_APP_API_KEY;
 
 const initialState = {
   loading: false,
@@ -46,11 +46,17 @@ export const fetchSearchResults = createAsyncThunk(
   
       const queryString = queryParams.join('&');
       console.log(queryString);
-  
+
+      try{
       const response = await axios.get(
         `https://newsapi.org/v2/everything?${queryString}&apiKey=${API_KEY}`
       );
+
       return response.data.articles;
+      }catch (error) {
+        // Use rejectWithValue to pass the error message to the reducer
+        return rejectWithValue(error.message);
+      }
     }
   );  
 
@@ -69,7 +75,7 @@ const searchSlice = createSlice({
       })
       .addCase(fetchSearchResults.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message;
+        state.error = action.payload; 
       });
   },
 });
@@ -77,3 +83,4 @@ const searchSlice = createSlice({
 export default searchSlice.reducer;
 export const selectSearchResults = (state) => state.search.searchResults;
 export const selectLoading = (state) => state.search.loading;
+export const selectError = (state) => state.search.error;
