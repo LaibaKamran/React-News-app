@@ -1,41 +1,49 @@
-.skeleton-loader {
-    display: flex;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f8f8f8;
+.skeleton{
+  margin: 40px;
+  min-width: 20vw;
+  max-height: 400px;
+}
+
+.image-skeleton{
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+
+  margin-bottom: 10px;
+}
+
+.date-skeleton{
+  width: 80px;
+  height: 12px;
+  background-color: #e0e0e0;
+
+  margin-bottom: 5px;
+}
+
+.title-skeleton{
+  height: 22px;
+  width: 70%;
+  background-color: #e0e0e0;
+  margin-bottom: 5px;
+}
+
+.description-skeleton{
+  height: 14px;
+  width: 100%;
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+
+  .skeleton {
+    margin: 50px; /* Add margin on sides and between articles */
+    min-width: 45vw; /* Calculate max width with margins on both sides */
   }
-  
-  .skeleton-img {
-    width: 120px;
-    height: 100px;
-    background-color: #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  
-  .skeleton-content {
-    flex: 1;
-  }
-  
-  .skeleton-date {
-    width: 80px;
-    height: 12px;
-    background-color: #ddd;
-    margin-bottom: 5px;
-  }
-  
-  .skeleton-title {
+
+  .image-skeleton{
     width: 100%;
-    height: 18px;
-    background-color: #ddd;
-    margin-bottom: 5px;
+    height: 250px;
   }
-  
-  .skeleton-description {
-    width: 100%;
-    height: 12px;
-    background-color: #ddd;
-  }
-  
+
+}

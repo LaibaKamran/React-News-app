@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NewsArticle from './NewsArticle';
 import SkeletonLoader from './SkeletonLoader'; // Import the SkeletonLoader component
 import './NewsGrid.css';
+import FirstArticleSkeletonLoader from './FirstArticleSkeletonLoader';
 
 const NewsGrid = ({ news }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -42,7 +43,7 @@ const NewsGrid = ({ news }) => {
         <div className='parent-div'>
         <div className='news-grid'>
           <div className="big-article">
-            {loading ? <SkeletonLoader /> : <NewsArticle article={firstArticle} isFirstArticle={true} />}
+            {loading ? <FirstArticleSkeletonLoader /> : <NewsArticle article={firstArticle} isFirstArticle={true} />}
           </div>
           <div className="small-articles">
             {restArticles.map((newsItem, index) => (

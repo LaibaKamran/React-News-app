@@ -12,7 +12,6 @@
     margin-top: 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    /* justify-content: space-between; */
     max-width: 1235px;
     cursor: pointer;
   }

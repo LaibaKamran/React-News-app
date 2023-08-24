@@ -1,17 +1,18 @@
-import React from 'react';
-import './SkeletonLoader.css';
+import React from "react";
+import './SkeletonLoader.css'
 
-const SkeletonLoader = () => {
-  return (
-    <div className="skeleton-loader">
-      <div className="skeleton-img"></div>
-      <div className="skeleton-content">
-        <div className="skeleton-date"></div>
-        <div className="skeleton-title"></div>
-        <div className="skeleton-description"></div>
+function SkeletonLoader(){
+
+  return(
+    <div className="skeleton">
+      <div className="image-skeleton"></div>
+      <div className="content-skeleton">
+        <div className="date-skeleton"></div>
+        <div className="title-skeleton"></div>
+        <div className="description-skeleton"></div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default SkeletonLoader;

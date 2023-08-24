@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchTechNews, selectTechNews } from '../features/news/techNewsSlice';
 import NewsGrid from '../components/NewsGrid';
 import Pagination from '../components/Pagination';
+import SkeletonLoader from './SkeletonLoader';
 // import './TechPage.css'
 
 function TechPage() {
@@ -28,6 +29,7 @@ function TechPage() {
   return (
     <div className="tech-page">
       <div className="news-container">
+        {/* <SkeletonLoader /> */}
         <NewsGrid news={techArticlesToShow} />
       </div>
       <div className="pagination-container">
